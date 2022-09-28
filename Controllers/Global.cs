@@ -8,7 +8,7 @@ namespace u19078308HW05.Controllers
 {
     public static class Global
     {
-        public static string ConnectingString = "Data Source=.;Initial Catalog=Library;Integrated Security=True";
+        public static string connectionString = "Data Source=.;Initial Catalog=Library;Integrated Security=True";
         public static List<Books> bookslist = new List<Books>();
 
     }

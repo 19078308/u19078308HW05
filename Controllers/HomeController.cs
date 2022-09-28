@@ -10,8 +10,8 @@ namespace u19078308HW05.Controllers
 {
     public class HomeController : Controller
     {
-        private SqlConnection myConnection = new SqlConnection(Global.ConnectingString);
-        public ActionResult Index()
+        private SqlConnection myConnection = new SqlConnection(Global.connectionString);
+        public ActionResult Books()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace u19078308HW05.Controllers
                     ViewBag.Status = 1;
                 }
             }
-            catch(Exception)
+            catch(Exception err)
             {
                 ViewBag.Status = 0;
             }
@@ -46,11 +46,16 @@ namespace u19078308HW05.Controllers
             return View(Global.bookslist);
         }
 
-        public ActionResult Books()
+        public ActionResult Index()
         { 
             return View();
         }
 
-        
+        public ActionResult Student()
+        {
+            return View();
+        }
+
+
     }
 }
