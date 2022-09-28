@@ -4,4 +4,28 @@
 }
 
 <h2>Students</h2>
+<hr />
+<div>
+    @using (Html.BeginForm("Student", "Home", FormMethod.Post, new { style = "width:100%" }))
+    {
+        <input type="text" style="width:50%;max-width:none; display:inline" name="searchStudent" class="form-control" placeholder="Search Student Name" />
+        @*@Html.DropDownList("Select class", new SelectList(listItems, "Value", "Text"), new { @class = "form-control" });*@
+        <button type="submit" class="btn btn-success"><span aria-hidden="true">Search</span></button>
+        <button type="reset" class="btn btn-danger"><span aria-hidden="true">Clear</span></button>
+
+    }
+</div>
+<div>
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Class</th>
+            <th>Points</th>
+            <th>Borrow Book</th>
+  
+    </table>
+
+</div>
 
