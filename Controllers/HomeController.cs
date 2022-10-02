@@ -10,6 +10,7 @@ namespace u19078308HW05.Controllers
 {
     public class HomeController : Controller
     {
+        LibraryEntities dbE = new LibraryEntities();
         private SqlConnection myConnection = new SqlConnection(Global.connectionString);
         public ActionResult Books()
         {
@@ -24,10 +25,8 @@ namespace u19078308HW05.Controllers
                     Books book = new Books();
                     book.bookId = (int)myData["bookId"];
                     book.name = myData["name"].ToString();
-                    book.Author.authorId = (int)myData["authorId"];
-                    book.Author.surname = myData["surname"].ToString();
-                    book.Type.typeId = (int)myData["typeId"];
-                    book.Type.name = myData["name"].ToString();
+                    book.authorId = (int)myData["authorId"];
+                    book.typeId = (int)myData["typeId"];
                     book.pagecount = (int)myData["pagecount"];
                     book.point = (int)myData["point"];
                     Global.bookslist.Add(book);
@@ -54,6 +53,33 @@ namespace u19078308HW05.Controllers
         public ActionResult Student()
         {
             return View();
+           /* try
+            {
+                myConnection.Open();
+                SqlCommand command = new SqlCommand("Select student.studentId, student.name, student.surname student.point from students");
+                SqlDataReader myReader = command.ExecuteReader();
+
+                while(myReader.Read())
+                {
+                    Students student = new Students();
+                    student.studentId = (int)myReader["studentId"];
+                    student.name = myReader["name"].ToString();
+                    student.surname = myReader["surname"].ToString();
+                    student.point = (int)myReader["point"];
+                   
+                }
+
+                return View();
+            }
+            catch(Exception)
+            {
+                ViewBag.Status = 0;
+                
+            }
+            finally
+            {
+                myConnection.Close();
+            } */
         }
 
 

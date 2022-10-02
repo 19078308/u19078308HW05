@@ -1,4 +1,5 @@
-﻿
+﻿@using u19078308HW05.Models
+@model List<u19078308HW05.Models.Students>
 @{
     ViewBag.Title = "Student";
 }
@@ -24,7 +25,21 @@
             <th>Class</th>
             <th>Points</th>
             <th>Borrow Book</th>
-  
+        </tr>
+
+        @foreach (Students student in Model)
+        {
+            <tr>
+                <td>@student.studentId</td>
+                <td>@student.name</td>
+                <td>@student.surname</td>
+               @* <td>@student.class</td>*@
+                <td>@student.point</td>
+                <td>borrowed</td>
+                <td><button type="button" class="btn btn-info">View</button></td>
+            </tr>
+        }
+
     </table>
 
 </div>

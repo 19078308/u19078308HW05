@@ -11,5 +11,6 @@ namespace u19078308HW05.Models
         public string name { get; set; }
         public string surname { get; set; }
         public int point { get; set; }
+        // public string class { get; set; }
     }
 }

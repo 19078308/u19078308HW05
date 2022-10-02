@@ -11,13 +11,9 @@ namespace u19078308HW05.Models
         public string name { get; set; }
         public int pagecount { get; set; }
         public int point { get; set; }
-        public Authors Author { get; set; }
-        public Types Type { get; set; }
+        public int authorId { get; set; }
+        public int typeId { get; set; }
 
-        public Books()
-        {
-            Author = new Authors();
-            Type = new Types();
-        }
+        
     }
 }
