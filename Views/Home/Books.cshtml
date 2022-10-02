@@ -12,8 +12,8 @@
     @using (Html.BeginForm("Books", "Home", FormMethod.Post, new { style = "width:100%" }))
     {
         <input type="text" style="width:50%;max-width:none; display:inline" name="searchBook" class="form-control" placeholder="Search Book Name" />
-        @*@Html.DropDownList("Select Type", new SelectList(listItems, "Value", "Text"), new { @class = "form-control" });
-        @Html.DropDownList("Select Author", new SelectList(listItems, "Value", "Text"), new { @class = "form-control" });*@
+        @Html.DropDownList("Select Author", new SelectList(ViewBag.data, "name"));
+        @Html.DropDownList("Select Type", new SelectList(ViewBag.data, "name"));
         <button type="submit" class="btn btn-success"><span aria-hidden="true">Search</span></button>
         <button type="reset" class="btn btn-danger"><span aria-hidden="true">Clear</span></button>
 

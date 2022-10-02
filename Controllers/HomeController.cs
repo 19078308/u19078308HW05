@@ -14,6 +14,12 @@ namespace u19078308HW05.Controllers
         private SqlConnection myConnection = new SqlConnection(Global.connectionString);
         public ActionResult Books()
         {
+            var items = dbE.books.ToList();
+            if (items != null)
+            {
+                ViewBag.Data = items;
+
+            }
             try
             {
                 myConnection.Open();
@@ -52,6 +58,12 @@ namespace u19078308HW05.Controllers
 
         public ActionResult Student()
         {
+            var Items = dbE.students.ToList();
+            if (Items != null)
+            {
+                ViewBag.Data = Items;
+
+            }
             return View();
            /* try
             {
